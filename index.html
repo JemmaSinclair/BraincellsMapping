@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braincells: New Horizons</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Braincells: New Horizons</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="javascript:void(0);" onclick="openModal()">Filters</a></li> <!-- Button to open the filter modal -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Full-page Map -->
+    <main>
+        <div id="map" class="map">
+            <div id="map-content" class="map-content"> <!-- This div will contain the zoomable/pannable content -->
+                <!-- Map assets and tunnels will be dynamically added here by JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Side Modal for Filters -->
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3>Filters</h3>
+            <label for="filter-type">Type</label>
+            <select id="filter-type">
+                <option value="all">All</option>
+                <option value="subway">Subway</option>
+                <option value="train">Train</option>
+                <option value="conduit">Conduits</option>
+                <option value="landmark">Landmarks</option>
+            </select>
+
+            <label for="filter-status">Status</label>
+            <select id="filter-status">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="under-construction">Under Construction</option>
+                <option value="planned">Planned</option>
+            </select>
+        </div>
+    </div>
+
+    <footer>
+        <p>This is an unofficial project for the Braincells SMP.</p>
+    </footer>
+
+    <script src="/scripts.js"></script>
+
+    <script>
+        // Open modal function
+        function openModal() {
+            document.getElementById("filterModal").style.width = "250px";
+        }
+
+        // Close modal function
+        function closeModal() {
+            document.getElementById("filterModal").style.width = "0";
+        }
+    </script>
+</body>
+</html>
